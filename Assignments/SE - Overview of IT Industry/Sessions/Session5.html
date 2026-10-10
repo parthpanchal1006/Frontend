@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>1. Git Commands</h2>
+    <ol>
+      <li>
+        <b>Initialize a repository:</b>
+        <pre>git init</pre>
+      </li>
+      <li>
+        <b>Stage all files:</b>
+        <pre>git add .</pre>
+      </li>
+      <li>
+        <b>Commit with a message:</b>
+        <pre>git commit -m "Initial commit"</pre>
+      </li>
+      <li>
+        <b>Push to remote:</b>
+        <pre>git push origin main</pre>
+      </li>
+      <li>
+        <b>Pull latest changes:</b>
+        <pre>git pull origin main</pre>
+      </li>
+    </ol>
+
+    <h2>2. Difference Between Git Fetch and Git Pull</h2>
+    <p>
+      <b>Git Fetch:</b> Downloads changes from the remote repository without
+      merging them into the current branch.
+    </p>
+    <p>
+      <b>Git Pull:</b> Downloads changes and integrates them into the current
+      branch.
+    </p>
+
+    <h2>3. Create a GitHub Repository and Push a File</h2>
+    <ol>
+      <li>Open GitHub and create a new repository.</li>
+      <li>Create a text file named hello.txt on your computer.</li>
+      <li>Open the terminal in that folder and run:</li>
+    </ol>
+    <pre>
+git init
+git add hello.txt
+git commit -m "Add hello text file"
+git branch -M main
+git remote add origin YOUR_REPOSITORY_URL
+git push -u origin main
+    </pre>
+    <p>Replace YOUR_REPOSITORY_URL with your actual GitHub repository URL.</p>
+    <p>
+      <b>Repository link:</b> Add your GitHub repository URL here after
+      successfully pushing the file.
+    </p>
+
+    <h2>4. Difference Between Fork and Pull Request</h2>
+    <p>
+      <b>Fork:</b> Creates your own copy of another user's repository on GitHub.
+    </p>
+    <p>
+      <b>Pull Request:</b> Requests that your changes be reviewed and merged
+      into another branch or repository.
+    </p>
+
+    <h2>5. Create a Branch, Commit, and Merge</h2>
+    <pre>
+       git switch main
+       git pull origin main
+       git switch -c feature-test
+       echo "Feature test" > feature.txt
+       git add feature.txt
+       git commit -m "Add feature test file"
+       git switch main
+       git merge feature-test
+    </pre>
+  </body>
+</html>
