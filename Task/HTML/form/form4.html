@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Admissions Form</h1>
+    <p>Enter your admission information below</p>
+
+    <hr />
+
+    <form>
+      <table cellpadding="5" cellspacing="10">
+        <tr>
+          <td colspan="3">
+            <b>Name <font color="red">*</font></b>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <input
+              type="text"
+              name="first_name"
+              style="width: 190px; height: 35px"
+              required
+            />
+            <br />
+            <label>First Name</label>
+          </td>
+
+          <td>
+            <input
+              type="text"
+              name="middle_initial"
+              style="width: 190px; height: 35px"
+            />
+            <br />
+            <label>Middle Name</label>
+          </td>
+
+          <td>
+            <input
+              type="text"
+              name="last_name"
+              style="width: 190px; height: 35px"
+              required
+            />
+            <br /><label>Last Name</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <br /><br />
+            <b>Birth Date <font color="red">*</font></b>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <select name="month" style="width: 90px; height: 40px" required>
+              <option value="">Select</option>
+              <option>January</option>
+              <option>February</option>
+              <option>March</option>
+              <option>April</option>
+              <option>May</option>
+              <option>June</option>
+              <option>July</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option>December</option>
+            </select>
+            <br /><label>Month</label>
+          </td>
+
+          <td>
+            <select name="day" style="width: 90px; height: 40px" required>
+              <option value="">Select</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <option>30</option>
+              <option>31</option>
+            </select>
+            <br /><label>Day</label>
+          </td>
+
+          <td>
+            <select name="year" style="width: 90px; height: 40px" required>
+              <option value="">Select</option>
+              <option>2000</option>
+              <option>2001</option>
+              <option>2002</option>
+            </select>
+            <br /><label>Year</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <br /><br />
+            <b>Gender <font color="red">*</font></b>
+            <br /><br />
+
+            <input type="radio" name="gender" value="Male" required /> Male
+            <br /><br />
+
+            <input type="radio" name="gender" value="Female" /> Female
+            <br /><br />
+
+            <input type="radio" name="gender" value="Decline" /> Decline to
+            Answer
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <br /><br />
+            <b>Are you Hispanic or Latino? <font color="red">*</font></b>
+            <br /><br />
+
+            <input type="radio" name="hispanic" value="No" required /> No
+            <br /><br />
+
+            <input type="radio" name="hispanic" value="Yes" /> Yes <br /><br />
+
+            <input type="radio" name="hispanic" value="Decline" /> Decline to
+            Answer
+          </td>
+        </tr>
+
+      
+      </table>
+    </form>
+  </body>
+</html>
