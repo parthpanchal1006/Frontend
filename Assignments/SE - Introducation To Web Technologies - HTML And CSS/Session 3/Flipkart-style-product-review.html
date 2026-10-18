@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session-3</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+      }
+
+      form {
+        width: 350px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ddd;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 24px;
+      }
+
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        box-sizing: border-box;
+      }
+
+      textarea {
+        height: 80px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        background-color: blue;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: darkblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form action="" method="post">
+      <h1>Rate &amp; Review this Product</h1>
+
+      <label for="username">Username</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Enter your name"
+        required
+      />
+
+      <label for="rating">Rating</label>
+      <select id="rating" name="rating" required>
+        <option value="" selected disabled>-- Select rating --</option>
+        <option value="1">1 - Poor</option>
+        <option value="2">2 - Fair</option>
+        <option value="3">3 - Good</option>
+        <option value="4">4 - Very Good</option>
+        <option value="5">5 - Excellent</option>
+      </select>
+
+      <label for="message">Review</label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Write your product review"
+        minlength="20"
+        required
+      ></textarea>
+
+      <button type="submit">Submit Review</button>
+    </form>
+  </body>
+</html>
