@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session-3</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fceeee;
+        margin: 0;
+        padding: 40px 15px;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: auto;
+        padding: 25px;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px #0000001a;
+      }
+
+      h1 {
+        color: #e23744;
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+        color: #666;
+      }
+
+      label {
+        display: block;
+        margin-top: 18px;
+        margin-bottom: 7px;
+        font-weight: bold;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 11px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 15px;
+      }
+
+      input:disabled {
+        background-color: #eeeeee;
+        color: #666;
+        cursor: not-allowed;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 90px;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 22px;
+        padding: 13px;
+        background-color: #e23744;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #c82333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Zomato</h1>
+      <p>Order your favourite food!</p>
+
+      <form action="" method="post">
+        <!-- Disabled because users should not be able to edit the order ID. -->
+        <label for="orderId">Order ID</label>
+        <input
+          type="text"
+          id="orderId"
+          name="orderId"
+          value="ORD12345"
+          disabled
+        />
+
+        <label for="username">User Name</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter your name"
+          required
+        />
+
+        <label for="food">Select Food Item</label>
+        <select id="food" name="food" required>
+          <option value="" disabled selected>Choose your food</option>
+          <option value="pizza">Pizza</option>
+          <option value="burger">Burger</option>
+          <option value="biryani">Biryani</option>
+          <option value="sandwich">Sandwich</option>
+        </select>
+
+        <label for="quantity">Quantity</label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          max="20"
+          placeholder="Enter quantity"
+          required
+        />
+
+        <label for="instructions">Delivery Instructions</label>
+        <textarea
+          id="instructions"
+          name="instructions"
+          placeholder="Enter your delivery instructions"
+          required
+        ></textarea>
+
+        <button type="submit">Place Order</button>
+      </form>
+    </div>
+  </body>
+</html>
