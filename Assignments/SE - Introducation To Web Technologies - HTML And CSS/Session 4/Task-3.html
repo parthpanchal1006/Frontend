@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f3f6;
+      }
+
+      header {
+        background-color: #2874f0;
+        color: white;
+        padding: 15px;
+        text-align: center;
+      }
+
+      nav {
+        background-color: white;
+        padding: 15px;
+      }
+
+      nav a {
+        color: #2874f0;
+        text-decoration: none;
+        margin-right: 10px;
+      }
+
+      article {
+        background-color: white;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 25px;
+        display: flex;
+        gap: 25px;
+      }
+
+      article img {
+        width: 220px;
+        height: 220px;
+        object-fit: contain;
+      }
+
+      h2,
+      h3,
+      p,
+      ul {
+        margin-bottom: 12px;
+      }
+
+      .price {
+        color: green;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      button {
+        padding: 12px 18px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .cart {
+        background-color: #ff9f00;
+      }
+
+      .buy {
+        background-color: #fb641b;
+      }
+
+      footer {
+        margin: auto;
+        background-color: #ffffff;
+        width: 800px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+        line-height: 1.8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Flipkart Product Store</h1>
+    </header>
+
+    <nav>
+      <a href="#">Home</a> &gt; <a href="#">Electronics</a> &gt;
+      <a href="#">Mobiles</a>
+    </nav>
+
+    <article>
+      <img
+        src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400"
+        alt="Smartphone"
+      />
+
+      <section>
+        <h2>Samsung Galaxy Smartphone</h2>
+        <p>Rating: 4.4 ★</p>
+
+        <p class="price">₹14,999</p>
+        <p><del>₹19,999</del> 25% off</p>
+
+        <h3>Product Description</h3>
+        <p>
+          A stylish smartphone with a great display and long-lasting battery.
+        </p>
+
+        <h3>Features</h3>
+        <ul>
+          <li>128 GB Storage</li>
+          <li>High-quality Camera</li>
+          <li>Long-lasting Battery</li>
+          <li>1-year Warranty</li>
+        </ul>
+
+        <button class="cart">Add to Cart</button>
+        <button class="buy">Buy Now</button>
+      </section>
+    </article>
+
+    <footer>
+      <p>&copy; 2026 Flipkart Product Store</p>
+      <p>About Us | Contact Us | Help Center</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foodie - Restaurant Discovery</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f7f8fa;
+        color: #222;
+      }
+
+      .hero {
+        background:
+          linear-gradient(rgba(20, 10, 10, 0.65), rgba(20, 10, 10, 0.65)),
+          url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600")
+            center/cover;
+        padding: 55px 20px;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 12px;
+      }
+
+      .hero h1 span {
+        color: #ff304f;
+      }
+
+      .hero p {
+        font-size: 18px;
+        margin-bottom: 28px;
+      }
+
+      .search-box {
+        max-width: 850px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        background: white;
+        border-radius: 12px;
+        padding: 8px;
+        gap: 10px;
+      }
+
+      .search-box input {
+        flex: 1;
+        min-width: 0;
+        border: none;
+        outline: none;
+        padding: 15px;
+        font-size: 15px;
+      }
+
+      .search-box button {
+        border: none;
+        background: #ff304f;
+        color: white;
+        padding: 15px 28px;
+        border-radius: 9px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .search-box button:hover {
+        background: #df1738;
+      }
+
+      .categories {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 25px 20px;
+        background: white;
+      }
+
+      .categories a {
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #e5e5e5;
+        padding: 13px 20px;
+        border-radius: 30px;
+        transition: 0.3s;
+      }
+
+      .categories a:hover,
+      .categories a.active {
+        background: #fff0f2;
+        color: #ff304f;
+        border-color: #ff304f;
+      }
+
+      .restaurant-section {
+        max-width: 1250px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      .section-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+
+      .section-heading h2 {
+        font-size: 30px;
+        margin-bottom: 8px;
+      }
+
+      .section-heading p {
+        color: #777;
+      }
+
+      .view-all {
+        text-decoration: none;
+        color: #ff304f;
+        border: 1px solid #ff304f;
+        padding: 12px 18px;
+        border-radius: 25px;
+      }
+
+      .restaurant-container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .restaurant-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+
+      .restaurant-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+      }
+
+      .image-box {
+        position: relative;
+        height: 210px;
+      }
+
+      .restaurant-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .offer {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: #ff304f;
+        color: white;
+        padding: 8px 13px;
+        border-radius: 7px;
+        font-size: 13px;
+        font-weight: bold;
+      }
+
+      .favorite {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+        border: none;
+        border-radius: 50%;
+        background: white;
+        color: #333;
+        font-size: 23px;
+        cursor: pointer;
+      }
+
+      .card-content {
+        padding: 18px;
+      }
+
+      .restaurant-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .restaurant-header h3 {
+        font-size: 21px;
+      }
+
+      .rating {
+        background: #168542;
+        color: white;
+        padding: 6px 9px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      .cuisine,
+      .location {
+        color: #777;
+        font-size: 14px;
+        margin-bottom: 12px;
+        line-height: 1.5;
+      }
+
+      .details {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        border-top: 1px solid #eee;
+        padding-top: 16px;
+        margin-top: 15px;
+      }
+
+      .detail-label {
+        color: #888;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+
+      .detail-value {
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+      .order-button {
+        width: 100%;
+        margin-top: 20px;
+        padding: 13px;
+        background: #fff0f2;
+        color: #ff304f;
+        border: none;
+        border-radius: 9px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .order-button:hover {
+        background: #ff304f;
+        color: white;
+      }
+
+      footer {
+        background: #222;
+        color: #ddd;
+        text-align: center;
+        padding: 25px 15px;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="hero">
+      <h1>Discover Great <span>Food</span></h1>
+      <p>Explore the best restaurants near you</p>
+
+      <form class="search-box" action="#" method="get">
+        <input
+          type="text"
+          name="location"
+          placeholder="Ahmedabad"
+          aria-label="Location"
+        />
+
+        <input
+          type="search"
+          name="search"
+          placeholder="Search restaurant, cuisine or dish..."
+          aria-label="Search restaurants"
+        />
+
+        <button type="submit">Search</button>
+      </form>
+    </header>
+
+    <nav class="categories" aria-label="Food categories">
+      <a href="#" class="active">All</a>
+      <a href="#">North Indian</a>
+      <a href="#">South Indian</a>
+      <a href="#">Chinese</a>
+      <a href="#">Italian</a>
+      <a href="#">Fast Food</a>
+      <a href="#">Desserts</a>
+      <a href="#">Gujarati</a>
+    </nav>
+
+    <main class="restaurant-section">
+      <div class="section-heading">
+        <div>
+          <h2>Popular Restaurants</h2>
+          <p>Curated picks for you</p>
+        </div>
+
+        <a href="#" class="view-all">View All →</a>
+      </div>
+
+      <section class="restaurant-container" aria-label="Popular restaurants">
+        <article class="restaurant-card">
+          <div class="image-box">
+            <img
+              class="restaurant-image"
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=700"
+              alt="Spice Garden restaurant interior"
+            />
+            <span class="offer">20% OFF</span>
+            <button
+              class="favorite"
+              type="button"
+              aria-label="Add Spice Garden to favorites"
+            >
+              ♡
+            </button>
+          </div>
+
+          <div class="card-content">
+            <header class="restaurant-header">
+              <h3>Spice Garden</h3>
+              <span class="rating">4.5 ★</span>
+            </header>
+
+            <p class="cuisine">North Indian, Punjabi, Mughlai</p>
+
+            <p class="location">📍 CG Road, Ahmedabad</p>
+
+            <footer class="details">
+              <div>
+                <p class="detail-value">25 min</p>
+                <p class="detail-label">Delivery time</p>
+              </div>
+
+              <div>
+                <p class="detail-value">₹400</p>
+                <p class="detail-label">For two</p>
+              </div>
+            </footer>
+
+            <button class="order-button" type="button">Order Now</button>
+          </div>
+        </article>
+        <article class="restaurant-card">
+          <div class="image-box">
+            <img
+              class="restaurant-image"
+              src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=700"
+              alt="Freshly baked pizza"
+            />
+            <span class="offer">Flat ₹125 OFF</span>
+            <button
+              class="favorite"
+              type="button"
+              aria-label="Add Pizza House to favorites"
+            >
+              ♡
+            </button>
+          </div>
+
+          <div class="card-content">
+            <header class="restaurant-header">
+              <h3>Pizza House</h3>
+              <span class="rating">4.2 ★</span>
+            </header>
+
+            <p class="cuisine">Pizza, Italian, Fast Food</p>
+
+            <p class="location">📍 Prahlad Nagar, Ahmedabad</p>
+
+            <footer class="details">
+              <div>
+                <p class="detail-value">30 min</p>
+                <p class="detail-label">Delivery time</p>
+              </div>
+
+              <div>
+                <p class="detail-value">₹500</p>
+                <p class="detail-label">For two</p>
+              </div>
+            </footer>
+
+            <button class="order-button" type="button">Order Now</button>
+          </div>
+        </article>
+
+        <article class="restaurant-card">
+          <div class="image-box">
+            <img
+              class="restaurant-image"
+              src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=700"
+              alt="Indian vegetarian thali"
+            />
+            <span class="offer">Pure Veg</span>
+            <button
+              class="favorite"
+              type="button"
+              aria-label="Add Green Leaf to favorites"
+            >
+              ♡
+            </button>
+          </div>
+
+          <div class="card-content">
+            <header class="restaurant-header">
+              <h3>Green Leaf</h3>
+              <span class="rating">4.6 ★</span>
+            </header>
+
+            <p class="cuisine">Pure Veg, Gujarati, Thali</p>
+
+            <p class="location">📍 Satellite, Ahmedabad</p>
+
+            <footer class="details">
+              <div>
+                <p class="detail-value">20 min</p>
+                <p class="detail-label">Delivery time</p>
+              </div>
+
+              <div>
+                <p class="detail-value">₹300</p>
+                <p class="detail-label">For two</p>
+              </div>
+            </footer>
+
+            <button class="order-button" type="button">Order Now</button>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2026 Foodie. All rights reserved.</p>
+      <p>Discover delicious food in Ahmedabad.</p>
+    </footer>
+  </body>
+</html>
