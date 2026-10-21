@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp Fixed Chat Badge</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f3f6;
+        padding: 30px;
+        min-height: 200vh;
+      }
+
+      h1 {
+        color: #222;
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+      .whatsapp-badge {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background-color: #25d366;
+        color: white;
+        padding: 14px 20px;
+        margin: 10px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 4px 10px #00000030;
+        z-index: 1000;
+      }
+
+      .whatsapp-badge:hover {
+        background-color: #128c7e;
+      }
+
+      .notification {
+        display: inline-block;
+        background-color: red;
+        color: white;
+        font-size: 12px;
+        padding: 4px 7px;
+        border-radius: 50%;
+        margin-left: 6px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>My Shopping Website</h1>
+
+    <p>
+      Welcome to our website! Scroll down to see how the WhatsApp badge stays in
+      the same position on the screen.
+    </p>
+
+    <p>Explore our products, offers, and services.</p>
+    <p>Contact us if you need any help with your order.</p>
+    <p>Scroll down to test the fixed notification badge.</p>
+
+    <a
+      href="https://wa.me/"
+      class="whatsapp-badge"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      WhatsApp
+      <span class="notification">3</span>
+    </a>
+  </body>
+</html>
