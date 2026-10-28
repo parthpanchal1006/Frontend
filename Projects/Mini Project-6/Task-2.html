@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gamer Tag | Bio Links</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 24px;
+        font-family: Arial, sans-serif;
+        color: #ffffff;
+        background: linear-gradient(135deg, #090b18, #191638, #0c1020);
+      }
+
+      .gamer-card {
+        width: 100%;
+        max-width: 420px;
+        padding: 35px 28px;
+        text-align: center;
+        background: rgba(25, 27, 48, 0.95);
+        border: 1px solid #34365c;
+        border-radius: 24px;
+        box-shadow: 0 0 35px rgba(125, 70, 255, 0.18);
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        margin: 0 auto 18px;
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid #9b5cff;
+      }
+
+      .online-status {
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        width: 18px;
+        height: 18px;
+        background: #20e58a;
+        border: 3px solid #191b30;
+        border-radius: 50%;
+      }
+
+      h1 {
+        font-size: clamp(28px, 5vw, 36px);
+        margin-bottom: 6px;
+        letter-spacing: 1px;
+      }
+
+      .username {
+        color: #aaaac7;
+        font-size: 14px;
+      }
+
+      .bio {
+        margin: 22px 0;
+        line-height: 1.8;
+        color: #d6d6e8;
+        font-size: 15px;
+      }
+
+      .social-links {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .social-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 52px;
+        padding: 14px;
+        border-radius: 12px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .social-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      }
+
+      .twitch {
+        background: #9146ff;
+      }
+
+      .discord {
+        background: #5865f2;
+      }
+
+      .steam {
+        background: #176b9c;
+      }
+
+      footer {
+        margin-top: 26px;
+        color: #8d8da9;
+        font-size: 11px;
+        letter-spacing: 2px;
+      }
+
+      /* Tablet */
+      @media (min-width: 600px) {
+        .gamer-card {
+          max-width: 460px;
+          padding: 40px;
+        }
+
+        .avatar {
+          width: 135px;
+          height: 135px;
+        }
+
+        .social-btn {
+          min-height: 56px;
+        }
+      }
+
+      /* Desktop */
+      @media (min-width: 900px) {
+        .gamer-card {
+          max-width: 480px;
+          padding: 45px;
+        }
+
+        .avatar {
+          width: 150px;
+          height: 150px;
+        }
+
+        .bio {
+          font-size: 16px;
+        }
+      }
+
+      /* Small mobile */
+      @media (max-width: 380px) {
+        body {
+          padding: 14px;
+        }
+
+        .gamer-card {
+          padding: 25px 18px;
+        }
+
+        .avatar {
+          width: 100px;
+          height: 100px;
+        }
+
+        .social-btn {
+          font-size: 14px;
+          min-height: 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="gamer-card">
+      <div class="avatar">
+        <img src="https://i.pravatar.cc/200?img=12" alt="Gamer Avatar" />
+        <span class="online-status"></span>
+      </div>
+
+      <h1>ShadowX</h1>
+      <p class="username">@shadowx_gaming</p>
+
+      <p class="bio">
+        🎮 Professional Gamer <br />
+        ⚡ Gaming • Streaming • Winning
+      </p>
+
+      <div class="social-links">
+        <a
+          href="https://www.twitch.tv/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-btn twitch"
+        >
+          🎮 Follow on Twitch
+        </a>
+
+        <a
+          href="https://discord.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-btn discord"
+        >
+          💬 Join my Discord
+        </a>
+
+        <a
+          href="https://store.steampowered.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-btn steam"
+        >
+          🎯 Find me on Steam
+        </a>
+      </div>
+
+      <footer>LEVEL UP YOUR GAME 🚀</footer>
+    </main>
+  </body>
+</html>

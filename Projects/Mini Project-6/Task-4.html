@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Links Preview</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f3f5f9;
+        padding: 30px 16px;
+        color: #222;
+      }
+
+      .container {
+        max-width: 750px;
+        margin: auto;
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-box {
+        background: white;
+        padding: 24px;
+        border-radius: 16px;
+        box-shadow: 0 4px 15px #0000000d;
+        margin-bottom: 30px;
+      }
+
+      .input-group {
+        margin-bottom: 16px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      input {
+        width: 100%;
+        padding: 13px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 15px;
+      }
+
+      input:focus {
+        outline: 2px solid #b7c8ff;
+        border-color: #4361ee;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 14px;
+        background: #4361ee;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .submit-btn:hover {
+        background: #304bd1;
+      }
+
+      #message {
+        color: #d62828;
+        margin-top: 12px;
+        text-align: center;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        background: white;
+        padding: 20px;
+        border-radius: 14px;
+        border: 2px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        overflow-wrap: anywhere;
+        transition: transform 0.2s;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        color: white;
+        font-weight: bold;
+        font-size: 22px;
+        flex-shrink: 0;
+      }
+
+      .platform {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .username {
+        color: #666;
+        margin-top: 5px;
+        font-size: 14px;
+      }
+
+      .visit-btn {
+        display: block;
+        text-align: center;
+        padding: 11px;
+        border-radius: 8px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: auto;
+      }
+
+      .instagram {
+        border-color: #e1306c;
+      }
+
+      .instagram .logo,
+      .instagram .visit-btn {
+        background: #e1306c;
+      }
+
+      .linkedin {
+        border-color: #0a66c2;
+      }
+
+      .linkedin .logo,
+      .linkedin .visit-btn {
+        background: #0a66c2;
+      }
+
+      .spotify {
+        border-color: #1db954;
+      }
+
+      .spotify .logo,
+      .spotify .visit-btn {
+        background: #1db954;
+      }
+
+      .youtube {
+        border-color: #ff0000;
+      }
+
+      .youtube .logo,
+      .youtube .visit-btn {
+        background: #ff0000;
+      }
+
+      .apple {
+        border-color: #8e44ad;
+      }
+
+      .apple .logo,
+      .apple .visit-btn {
+        background: #8e44ad;
+      }
+
+      .generic {
+        border-color: #64748b;
+      }
+
+      .generic .logo,
+      .generic .visit-btn {
+        background: #64748b;
+      }
+
+      @media (max-width: 500px) {
+        body {
+          padding: 20px 12px;
+        }
+
+        .form-box {
+          padding: 18px;
+        }
+
+        .cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>My Social Links</h1>
+
+      <form class="form-box" id="socialForm">
+        <div class="input-group">
+          <label for="instagram">Instagram URL</label>
+          <input
+            id="instagram"
+            type="url"
+            placeholder="https://instagram.com/username"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="linkedin">LinkedIn URL</label>
+          <input
+            id="linkedin"
+            type="url"
+            placeholder="https://linkedin.com/in/username"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="spotify">Spotify URL</label>
+          <input
+            id="spotify"
+            type="url"
+            placeholder="https://open.spotify.com/user/username"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="youtube">YouTube URL</label>
+          <input
+            id="youtube"
+            type="url"
+            placeholder="https://youtube.com/@username"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="apple">Apple Music URL</label>
+          <input
+            id="apple"
+            type="url"
+            placeholder="https://music.apple.com/profile/username"
+          />
+        </div>
+
+        <button class="submit-btn" type="submit">Generate Preview Cards</button>
+
+        <p id="message" role="alert"></p>
+      </form>
+
+      <h2>Profile Previews</h2>
+      <div class="cards" id="cards"></div>
+    </main>
+
+    <script>
+      const platforms = [
+        {
+          id: "instagram",
+          name: "Instagram",
+          logo: "IG",
+          css: "instagram",
+          hosts: ["instagram.com", "www.instagram.com"],
+        },
+        {
+          id: "linkedin",
+          name: "LinkedIn",
+          logo: "in",
+          css: "linkedin",
+          hosts: ["linkedin.com", "www.linkedin.com"],
+        },
+        {
+          id: "spotify",
+          name: "Spotify",
+          logo: "♫",
+          css: "spotify",
+          hosts: ["open.spotify.com"],
+        },
+        {
+          id: "youtube",
+          name: "YouTube",
+          logo: "▶",
+          css: "youtube",
+          hosts: ["youtube.com", "www.youtube.com", "m.youtube.com"],
+        },
+        {
+          id: "apple",
+          name: "Apple Music",
+          logo: "♪",
+          css: "apple",
+          hosts: ["music.apple.com"],
+        },
+      ];
+
+      const form = document.getElementById("socialForm");
+      const cards = document.getElementById("cards");
+      const message = document.getElementById("message");
+
+      function getUsername(url, platform) {
+        const parts = url.pathname.split("/").filter(Boolean);
+
+        if (platform.id === "instagram") {
+          return "@" + (parts[0] || "profile");
+        }
+
+        if (platform.id === "linkedin") {
+          return "@" + (parts[1] || parts[0] || "profile");
+        }
+
+        if (platform.id === "spotify") {
+          const index = parts.indexOf("user");
+          return index >= 0 && parts[index + 1]
+            ? "@" + parts[index + 1]
+            : "Spotify profile";
+        }
+
+        if (platform.id === "youtube") {
+          return parts[0]?.startsWith("@")
+            ? parts[0]
+            : parts[0] || "YouTube channel";
+        }
+
+        if (platform.id === "apple") {
+          const index = parts.indexOf("profile");
+          return index >= 0 && parts[index + 1]
+            ? "@" + parts[index + 1]
+            : "Apple Music profile";
+        }
+
+        return parts.at(-1) || url.hostname;
+      }
+
+      function createCard(platform, url) {
+        const card = document.createElement("article");
+        card.className = `card ${platform.css}`;
+
+        const header = document.createElement("div");
+        header.className = "card-header";
+
+        const logo = document.createElement("div");
+        logo.className = "logo";
+        logo.textContent = platform.logo;
+        logo.setAttribute("aria-label", platform.name + " logo");
+
+        const info = document.createElement("div");
+
+        const title = document.createElement("div");
+        title.className = "platform";
+        title.textContent = platform.name;
+
+        const username = document.createElement("div");
+        username.className = "username";
+        username.textContent = getUsername(url, platform);
+
+        info.append(title, username);
+        header.append(logo, info);
+
+        const visit = document.createElement("a");
+        visit.className = "visit-btn";
+        visit.textContent = "Visit " + platform.name;
+        visit.href = url.href;
+        visit.target = "_blank";
+        visit.rel = "noopener noreferrer";
+
+        card.append(header, visit);
+        return card;
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        cards.replaceChildren();
+        message.textContent = "";
+
+        let count = 0;
+        let invalid = false;
+
+        for (const platform of platforms) {
+          const value = document.getElementById(platform.id).value.trim();
+
+          if (!value) continue;
+
+          try {
+            const url = new URL(value);
+
+            if (url.protocol !== "https:" && url.protocol !== "http:") {
+              throw new Error("Invalid protocol");
+            }
+
+            if (!platform.hosts.includes(url.hostname.toLowerCase())) {
+              throw new Error("Invalid platform");
+            }
+
+            if (url.username || url.password) {
+              throw new Error("Invalid URL");
+            }
+
+            cards.appendChild(createCard(platform, url));
+            count++;
+          } catch {
+            invalid = true;
+          }
+        }
+
+        if (count === 0) {
+          message.textContent = "Enter at least one valid social profile URL.";
+        } else if (invalid) {
+          message.textContent =
+            "Some links were invalid or from the wrong platform. Valid links are shown below.";
+        }
+      });
+    </script>
+  </body>
+</html>
