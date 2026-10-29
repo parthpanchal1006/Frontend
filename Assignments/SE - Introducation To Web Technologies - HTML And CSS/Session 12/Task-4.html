@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Artist Landing Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        background: #121212;
+        color: white;
+        font-family: Arial, sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: #202020;
+      }
+
+      .navbar-brand {
+        color: #1ed760 !important;
+        font-weight: bold;
+        font-size: 24px;
+      }
+
+      .nav-link {
+        color: white !important;
+        margin-left: 15px;
+      }
+
+      .nav-link:hover {
+        color: #1ed760 !important;
+      }
+
+      section {
+        min-height: 80vh;
+        padding: 100px 20px;
+        text-align: center;
+        scroll-margin-top: 65px;
+      }
+
+      #home {
+        background: linear-gradient(135deg, #25103d, #121212);
+      }
+
+      #about {
+        background: #1c1c1c;
+      }
+
+      #contact {
+        background: #252033;
+      }
+
+      .profile-img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid #1ed760;
+        margin-bottom: 20px;
+      }
+
+      h1,
+      h2 {
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .btn-music {
+        background: #1ed760;
+        color: #121212;
+        border-radius: 25px;
+        padding: 12px 28px;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 15px;
+      }
+
+      .btn-music:hover {
+        background: white;
+        color: #121212;
+      }
+
+      footer {
+        background: #101010;
+        text-align: center;
+        padding: 20px;
+        color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#home">Alex Music</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMenu"
+          aria-controls="navbarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      id="home"
+      class="d-flex flex-column justify-content-center align-items-center"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400"
+        alt="Artist profile"
+        class="profile-img"
+      />
+
+      <h1>Alex Morgan</h1>
+      <p class="lead">Singer | Songwriter | Music Producer</p>
+      <p>Creating music that connects hearts and inspires souls.</p>
+
+      <a
+        href="https://open.spotify.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-music"
+        >Listen to My Music</a
+      >
+    </section>
+
+    <section
+      id="about"
+      class="d-flex flex-column justify-content-center align-items-center"
+    >
+      <h2>About Me</h2>
+      <p class="mx-auto" style="max-width: 600px; line-height: 1.8">
+        I am Alex Morgan, a passionate singer and songwriter who loves creating
+        meaningful music. My goal is to connect with listeners through melodies,
+        emotions, and unforgettable performances.
+      </p>
+    </section>
+
+    <section
+      id="contact"
+      class="d-flex flex-column justify-content-center align-items-center"
+    >
+      <h2>Contact Me</h2>
+      <p>For collaborations, live shows, and business enquiries.</p>
+      <a href="mailto:artist@example.com" class="btn-music"> Contact Me </a>
+    </section>
+
+    <footer>&copy; 2026 Alex Music. All rights reserved.</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
