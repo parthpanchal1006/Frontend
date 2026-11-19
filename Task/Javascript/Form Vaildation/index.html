@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form onsubmit="return formValidation();">
+      <h2>Registration Form</h2>
+      <div>
+        <input
+          type="text"
+          id="fnm"
+          onblur="validation(fnm, fnmerr)"
+          placeholder="Enter your First Name"
+        />
+        <span id="fnmerr"></span>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          id="lnm"
+          onblur="validation(lnm, lnmerr)"
+          placeholder="Enter your Last Name"
+        />
+        <span id="lnmerr"></span>
+      </div>
+
+      <div>
+        <input
+          type="tel"
+          id="mb"
+          onblur="validation(mb, mberr)"
+          placeholder="Enter your Phone Number"
+        />
+        <span id="mberr"></span>
+      </div>
+
+      <div>
+        <input
+          type="email"
+          id="em"
+          onblur="validation(em, emerr)"
+          placeholder="Enter your Email"
+        />
+        <span id="emerr"></span>
+      </div>
+
+      <div>
+        <select id="gen" onblur="validation(gen, generr)">
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+        <span id="generr"></span>
+      </div>
+
+      <div>
+        <input
+          type="password"
+          id="psw"
+          onblur="validation(psw, pswerr)"
+          placeholder="Enter your Password"
+        />
+        <span id="pswerr"></span>
+      </div>
+
+      <div>
+        <input
+          type="password"
+          id="cpsw"
+          onblur="validation(cpsw, cpswerr)"
+          placeholder="Confirm your Password"
+        />
+        <span id="cpswerr"></span>
+      </div>
+
+      <div>
+        <input type="submit" value="Register" />
+      </div>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>
