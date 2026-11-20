@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tuition Fee Board</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 30px;
+      }
+
+      .container {
+        background-color: white;
+        max-width: 600px;
+        margin: auto;
+        padding: 25px;
+        border-radius: 10px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      h2 {
+        color: #555;
+      }
+
+      p {
+        font-size: 17px;
+        color: #333;
+        padding: 10px;
+        background-color: #f8f8f8;
+        border-radius: 5px;
+      }
+
+      .receipt {
+        color: green;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tuition Fee Board</h1>
+
+      <h2>Net Fee</h2>
+      <p id="fee1"></p>
+      <p id="fee2"></p>
+
+      <h2>Late Fee</h2>
+      <p id="late1"></p>
+      <p id="late2"></p>
+      <p id="late3"></p>
+
+      <h2>Formatted Rupees</h2>
+      <p id="rupee1"></p>
+      <p id="rupee2"></p>
+      <p id="rupee3"></p>
+
+      <h2>Student Receipts</h2>
+      <p class="receipt" id="receipt1"></p>
+      <p class="receipt" id="receipt2"></p>
+      <p class="receipt" id="receipt3"></p>
+    </div>
+
+    <script src="fee_functions.js"></script>
+  </body>
+</html>
