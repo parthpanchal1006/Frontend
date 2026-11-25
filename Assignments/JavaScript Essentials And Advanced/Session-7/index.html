@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Society Notice Board</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Society Notice Board</h1>
+
+      <div class="input-section">
+        <input type="text" id="newNotice" placeholder="Write a notice..." />
+
+        <select id="category">
+          <option value="Maintenance">Maintenance</option>
+          <option value="Event">Event</option>
+          <option value="Security">Security</option>
+        </select>
+
+        <button id="addBtn">Add Notice</button>
+        <button id="clearBtn">Clear All</button>
+      </div>
+
+      <p>Characters: <span id="charCount">0</span></p>
+
+      <h3>Total Notices: <span id="noticeCount">0</span></h3>
+
+      <ul id="noticeList"></ul>
+    </div>
+
+    <script src="board.js"></script>
+  </body>
+</html>
